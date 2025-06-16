@@ -1,3 +1,4 @@
+'use strict';
 const books = [
   {
     title: 'Algorithms',
@@ -284,7 +285,7 @@ const spellWord = function (string) {
 
 // spellWord('JavaScript');
 
-const [mainKeyword, ...rest] = books[0].keywords;
+const [mainKeyword, ...rest1] = books[0].keywords;
 // console.log(mainKeyword, rest);
 
 const { publisher: bookPublisher, ...restOfTheBook } = books[1];
@@ -473,3 +474,52 @@ const entries3 = Object.entries(books[0].thirdParty.goodreads);
 // for (const [day, { open, close }] of Object.entries(openingHours1)) {
 //   console.log(`On ${day} we open at ${open} and close at ${close}`);
 // }
+
+const allKeywords = [];
+for (const book of books) {
+  allKeywords.push(...book.keywords);
+}
+// console.log(allKeywords);
+
+const uniqueKeywords = new Set(allKeywords);
+// console.log(uniqueKeywords);
+
+uniqueKeywords.add('coding');
+uniqueKeywords.add('science');
+// console.log(uniqueKeywords);
+
+uniqueKeywords.delete('business');
+// console.log(uniqueKeywords);
+
+const uniqueKeywordsArr = [...uniqueKeywords];
+// console.log(uniqueKeywordsArr);
+
+uniqueKeywords.clear();
+// console.log(uniqueKeywords);
+
+const bookMap = new Map([
+  ['title', 'Clean Code'],
+  ['author', 'Robert C. Martin'],
+]);
+// console.log(bookMap);
+
+bookMap.set('pages', 464);
+// console.log(bookMap);
+
+// console.log(`${bookMap.get('title')} is written by ${bookMap.get('author')}`);
+
+// console.log(bookMap.size);
+
+// console.log(
+//   bookMap.has('author') ? 'The author of the book is known' : 'No author'
+// );
+
+// console.log(books[0]);
+const firstBookMap = new Map(Object.entries(books[0]));
+// console.log(firstBookMap);
+
+for (const [key, value] of firstBookMap) {
+  if (typeof value === 'number') {
+    // console.log(`${key}: ${value}`);
+  }
+}
