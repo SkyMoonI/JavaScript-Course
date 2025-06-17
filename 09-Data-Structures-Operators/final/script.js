@@ -75,9 +75,12 @@ for (const flight of flights.split('+')) {
 // Coding Challenge #4
 
 
-Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
+Write a program that receives a list of variable names written 
+in underscore_case and convert them to camelCase.
 
-The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
+The input will come from a textarea inserted into the DOM 
+(see code below), and conversion will happen when the button is 
+pressed.
 
 THIS TEST DATA (pasted to textarea)
 underscore_case
